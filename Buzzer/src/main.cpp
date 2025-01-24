@@ -20,7 +20,6 @@
 // 도(523Hz), 레(587Hz), 미(659 Hz), 파 (698 Hz),
 // 솔(784), 라(880 Hz), 시(988 Hz), 도(1047 Hz)
 // 솔솔라라솔솔미
-int melody[] = {C5,D5,E5,F5,G5,A5,B5,C6};
 int duration = 200;
 
 void setup() {
@@ -28,22 +27,16 @@ void setup() {
     pinMode(BUTTON_A,INPUT);
     pinMode(BUTTON_B,INPUT);
     pinMode(BUTTON_C,INPUT);
-    Serial.begin(9600);
 }
 
 
 void loop() {
     // write your code here
-    int melodyLength = sizeof(melody) / sizeof(int);
-
     if (digitalRead(BUTTON_A)) {
-        Serial.println("A");
         tone(BUZZER,G5, duration);
     } else if (digitalRead(BUTTON_B)) {
         tone(BUZZER,A5, duration);
-        Serial.println("B");
     } else if (digitalRead(BUTTON_C)) {
         tone(BUZZER,E5, duration);
-        Serial.println("C");
     }
 }
