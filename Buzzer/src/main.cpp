@@ -12,12 +12,11 @@ void setup() {
 void loop() {
     // write your code here
     int R = analogRead(ANALOG);
-    if (R>100) {
+    Serial.println(R);
+
+    if (R > 100) {
         digitalWrite(LED_PIN, HIGH);
     } else {
         digitalWrite(LED_PIN, LOW);
     }
-    Serial.println(R);
-
-
 }
