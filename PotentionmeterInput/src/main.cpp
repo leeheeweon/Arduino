@@ -15,6 +15,10 @@ void loop() {
     Serial.print("potentiometer: ");
     Serial.println(R);
 
-    analogWrite(LED_PIN, R);
+    if (R > 500) {
+        digitalWrite(LED_PIN, HIGH);
+    } else {
+        digitalWrite(LED_PIN, LOW);
+    }
 
 }
